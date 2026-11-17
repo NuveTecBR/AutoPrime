@@ -1,0 +1,11 @@
+{
+  "name": "autoprime",
+  "version": "1.0.0",
+  "description": "AutoPrime Seminovos — Plataforma Web de Venda & Financiamento de Veículos (Método ENDS)",
+  "private": true,
+  "scripts": {
+    "postinstall": "npm --prefix backend install",
+    "start": "npm --prefix backend start",
+    "test": "npm --prefix backend test"
+  }
+}

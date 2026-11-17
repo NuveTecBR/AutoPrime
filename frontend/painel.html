@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel do Lojista — AutoPrime Seminovos (Portfólio Nuvetec)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@600;700;800&family=Lora:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <a href="#conteudo-principal" class="skip-link">Pular para o painel administrativo</a>
+
+  <div class="portfolio-top-ribbon">
+    <div class="portfolio-top-ribbon-inner">
+      <div>
+        <span class="portfolio-badge">Painel Administrativo Demo</span>
+        <span style="margin-left: 8px;">Autenticação JWT Server-Side + Controle de Acesso RBAC (Lojista / Vendedor)</span>
+      </div>
+      <a href="/index.html" style="color: #FCA5A5; font-weight: 700; text-decoration: none;">← Voltar para a Vitrine</a>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="/index.html" class="brand-link">
+        <div class="brand-mark" aria-hidden="true">AP</div>
+        <div class="brand-text-group">
+          <span class="brand-name">Auto<span>Prime</span></span>
+          <span class="brand-sub">Gestão de Pátio & Leads</span>
+        </div>
+      </a>
+      <div id="painel-user-bar" style="display: flex; align-items: center; gap: 12px;"></div>
+    </div>
+  </header>
+
+  <main id="conteudo-principal" class="page-container">
+    <!-- Visão 1: Tela de Login com Preenchimento Rápido Demo -->
+    <section id="secao-login" style="max-width: 520px; margin: 24px auto;" aria-labelledby="login-heading">
+      <div class="trust-card" style="padding: 36px;">
+        <span class="portfolio-badge" style="margin-bottom: 12px; display: inline-block;">Acesso Restrito Equipe</span>
+        <h1 id="login-heading" style="font-size: 1.75rem; font-weight: 800; margin-bottom: 8px;">
+          Painel do Lojista AutoPrime
+        </h1>
+        <p style="font-family: var(--font-serif); color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">
+          Gerencie veículos do estoque, altere status (Disponível / Reservado / Vendido) e acompanhe leads de financiamento em tempo real.
+        </p>
+
+        <div style="background: #F1F5F9; padding: 14px; border-radius: var(--radius-sm); margin-bottom: 20px;">
+          <span style="display: block; font-size: 0.78rem; font-weight: 800; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;">
+            Atalhos de Demonstração (1 Clique):
+          </span>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button type="button" id="btn-demo-lojista" class="btn btn-dark" style="min-height: 38px; padding: 6px 12px; font-size: 0.82rem;">
+              Preencher Diretor Lojista
+            </button>
+            <button type="button" id="btn-demo-vendedor" class="btn btn-outline" style="min-height: 38px; padding: 6px 12px; font-size: 0.82rem;">
+              Preencher Vendedor
+            </button>
+          </div>
+        </div>
+
+        <form id="form-login-painel" novalidate>
+          <div class="form-group">
+            <label for="login-email" class="form-label">E-mail Corporativo</label>
+            <input type="email" id="login-email" class="form-input" value="diretoria@autoprime-demo.com.br" required>
+          </div>
+          <div class="form-group">
+            <label for="login-senha" class="form-label">Senha</label>
+            <input type="password" id="login-senha" class="form-input" value="AutoPrime@2026" required>
+          </div>
+          <div id="login-erro" aria-live="polite" style="margin-bottom: 12px;"></div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            Entrar no Painel de Gestão
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Visão 2: Dashboard Autenticado -->
+    <section id="secao-dashboard" style="display: none;" aria-label="Dashboard Operacional AutoPrime">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-bottom: 36px;">
+        <div class="bento-stat-card">
+          <span class="spec-label">Veículos Cadastrados</span>
+          <div id="metric-total-carros" class="bento-stat-number">0</div>
+        </div>
+        <div class="bento-stat-card">
+          <span class="spec-label">Leads & Simulações</span>
+          <div id="metric-total-leads" class="bento-stat-number" style="color: var(--accent-blue);">0</div>
+        </div>
+        <div class="bento-stat-card">
+          <span class="spec-label">Perfil de Sessão</span>
+          <div id="metric-cargo" style="font-size: 1.25rem; font-weight: 800; color: var(--success); margin-top: 8px;">-</div>
+        </div>
+      </div>
+
+      <div class="admin-two-col-grid">
+        <!-- Coluna 1: Leads de Financiamento e Test-Drive -->
+        <div class="trust-card">
+          <h2 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 16px;">
+            Leads de Financiamento & Test-Drive Recebidos
+          </h2>
+          <div id="lista-leads-container" aria-live="polite"></div>
+        </div>
+
+        <!-- Coluna 2: Cadastrar Novo Veículo no Estoque -->
+        <div class="trust-card">
+          <h2 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 16px;">
+            Cadastrar Veículo no Estoque
+          </h2>
+          <form id="form-novo-veiculo" novalidate>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+              <div class="form-group">
+                <label for="nv-marca" class="form-label">Marca *</label>
+                <input type="text" id="nv-marca" class="form-input" placeholder="Ex: Toyota" required>
+              </div>
+              <div class="form-group">
+                <label for="nv-modelo" class="form-label">Modelo *</label>
+                <input type="text" id="nv-modelo" class="form-input" placeholder="Ex: Hilux SRX" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="nv-versao" class="form-label">Versão / Motorização *</label>
+              <input type="text" id="nv-versao" class="form-input" placeholder="Ex: 2.8 Turbo Diesel 4x4 AT" required>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;">
+              <div class="form-group">
+                <label for="nv-ano" class="form-label">Ano Modelo *</label>
+                <input type="number" id="nv-ano" class="form-input" value="2024" required>
+              </div>
+              <div class="form-group">
+                <label for="nv-preco" class="form-label">Preço (R$) *</label>
+                <input type="number" id="nv-preco" class="form-input" value="159900" required>
+              </div>
+              <div class="form-group">
+                <label for="nv-km" class="form-label">KM *</label>
+                <input type="number" id="nv-km" class="form-input" value="18000" required>
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;">
+              <div class="form-group">
+                <label for="nv-carroceria" class="form-label">Carroceria</label>
+                <select id="nv-carroceria" class="form-select">
+                  <option value="SUV">SUV</option>
+                  <option value="Sedan">Sedan</option>
+                  <option value="Hatch">Hatch</option>
+                  <option value="Picape">Picape</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="nv-cambio" class="form-label">Câmbio</label>
+                <select id="nv-cambio" class="form-select">
+                  <option value="Automático">Automático</option>
+                  <option value="CVT">CVT</option>
+                  <option value="Manual">Manual</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="nv-combustivel" class="form-label">Combustível</label>
+                <select id="nv-combustivel" class="form-select">
+                  <option value="Flex">Flex</option>
+                  <option value="Diesel">Diesel</option>
+                  <option value="Híbrido">Híbrido</option>
+                </select>
+              </div>
+            </div>
+            <div id="nv-feedback" aria-live="polite" style="margin-bottom: 12px;"></div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              + Publicar Veículo na Vitrine
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Gestão Rápida do Estoque Atual -->
+      <div class="trust-card" style="margin-top: 28px;">
+        <h2 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 16px;">
+          Controle de Status de Veículos no Pátio
+        </h2>
+        <div id="estoque-admin-lista"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="fictional-disclaimer-banner">
+        <strong>⚠️ AVISO DE DEMONSTRAÇÃO DE PORTFÓLIO (DADOS FICTÍCIOS)</strong>
+        <p>Painel administrativo demonstrativo desenvolvido pela Nuvetec para apresentação comercial. Todos os dados são fictícios.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/js/consentimentos.js"></script>
+  <script type="module" src="/js/painel.js"></script>
+</body>
+</html>

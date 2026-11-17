@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transparência Legal, Termos, CDC & Canal LGPD — AutoPrime Seminovos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@600;700&family=Lora:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo jurídico e LGPD</a>
+
+  <div class="portfolio-top-ribbon">
+    <div class="portfolio-top-ribbon-inner">
+      <span><span class="portfolio-badge">Conformidade Legal & LGPD</span> Instrumentos Jurídicos e Canal de Direitos do Titular</span>
+      <a href="/index.html" style="color: #FCA5A5; font-weight: 700; text-decoration: none;">← Voltar para a Vitrine</a>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="/index.html" class="brand-link">
+        <div class="brand-mark" aria-hidden="true">AP</div>
+        <div class="brand-text-group">
+          <span class="brand-name">Auto<span>Prime</span></span>
+          <span class="brand-sub">Conformidade & Ética</span>
+        </div>
+      </a>
+      <nav class="main-nav" aria-label="Navegação Secundária">
+        <a href="/index.html" class="nav-link">Estoque</a>
+        <a href="/painel.html" class="btn btn-dark">Painel do Lojista</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo-principal" class="page-container">
+    <h1 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 12px;">
+      Central de Transparência, Termos de Uso, Garantia CDC e Direitos LGPD
+    </h1>
+    <p style="font-family: var(--font-serif); color: var(--text-muted); max-width: 75ch; margin-bottom: 32px;">
+      Em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018), o Código de Defesa do Consumidor (Lei nº 8.078/1990) e o Decreto do Comércio Eletrônico (Decreto nº 7.962/2013).
+    </p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 36px;">
+      <article class="trust-card" id="secao-termos">
+        <h2 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 10px;">1. Termos de Serviço e Simulação</h2>
+        <p style="font-family: var(--font-serif); font-size: 0.94rem; color: var(--text-body);">
+          As simulações financeiras calculadas pela Tabela Price têm caráter informativo e pré-contratual, sujeitas à análise de crédito junto às instituições financeiras parceiras. É vedada qualquer cobrança antecipada de taxa de aprovação de ficha.
+        </p>
+      </article>
+
+      <article class="trust-card" id="secao-privacidade">
+        <h2 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 10px;">2. Política de Privacidade e Minimização (LGPD)</h2>
+        <p style="font-family: var(--font-serif); font-size: 0.94rem; color: var(--text-body);">
+          Coletamos estritamente Nome e Telefone/WhatsApp para retorno sobre o veículo selecionado (Art. 6º, III da LGPD). Os dados não são compartilhados com corretores externos sem autorização expressa.
+        </p>
+      </article>
+
+      <article class="trust-card" id="secao-reembolso">
+        <h2 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 10px;">3. Política de Sinal, Arrependimento e Garantia (CDC)</h2>
+        <p style="font-family: var(--font-serif); font-size: 0.94rem; color: var(--text-body);">
+          Reservas feitas à distância contam com direito integral de arrependimento em até 7 dias corridos com devolução imediata de 100% do sinal (Art. 49 do CDC). Todos os veículos contam com garantia legal de 90 dias (Art. 26 do CDC) acrescida de cobertura contratual até 12 meses.
+        </p>
+      </article>
+
+      <article class="trust-card" id="secao-titular">
+        <h2 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 10px;">4. Exercício de Direitos do Titular (Art. 18 LGPD)</h2>
+        <form id="form-lgpd-autoprime" novalidate>
+          <div class="form-group">
+            <label for="lgpd-nome" class="form-label">Nome do Titular *</label>
+            <input type="text" id="lgpd-nome" class="form-input" required>
+          </div>
+          <div class="form-group">
+            <label for="lgpd-email" class="form-label">E-mail Cadastrado *</label>
+            <input type="email" id="lgpd-email" class="form-input" required>
+          </div>
+          <div class="form-group">
+            <label for="lgpd-direito" class="form-label">Solicitação</label>
+            <select id="lgpd-direito" class="form-select">
+              <option value="Confirmacao">Confirmar existência de tratamento de dados</option>
+              <option value="Acesso">Receber cópia dos dados armazenados</option>
+              <option value="Correcao">Corrigir dados incompletos ou inexatos</option>
+              <option value="Exclusao">Revogar consentimento e excluir meus dados</option>
+            </select>
+          </div>
+          <div id="lgpd-feedback" aria-live="polite" style="margin-bottom: 12px;"></div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            Registrar Protocolo no DPO
+          </button>
+        </form>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="fictional-disclaimer-banner">
+        <strong>⚠️ AVISO DE DEMONSTRAÇÃO DE PORTFÓLIO (DADOS FICTÍCIOS)</strong>
+        <p>Este site é uma demonstração tecnológica desenvolvida pela Nuvetec. Todos os dados empresariais, CNPJ e veículos exibidos são fictícios.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/js/consentimentos.js"></script>
+  <script type="module" src="/js/termos.js"></script>
+</body>
+</html>
