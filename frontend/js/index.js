@@ -308,7 +308,7 @@ async function abrirDrawerVeiculo(veiculoId) {
           <label style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.82rem; color: var(--text-body); cursor: pointer;">
             <input type="checkbox" id="lead-lgpd" style="margin-top: 4px;" required>
             <span>
-              Autorizo o uso do meu nome e WhatsApp exclusivamente para retorno sobre esta simulação, conforme a <a href="/termos.html?secao=privacidade" style="color: var(--accent-blue); font-weight: 700;">Política de Privacidade LGPD</a>. (Nota: site demonstrativo com dados fictícios).
+              Autorizo o uso do meu nome e WhatsApp exclusivamente para retorno sobre esta simulação, conforme a <a href="./termos.html?secao=privacidade" style="color: var(--accent-blue); font-weight: 700;">Política de Privacidade LGPD</a>. (Nota: site demonstrativo com dados fictícios).
             </span>
           </label>
         </div>

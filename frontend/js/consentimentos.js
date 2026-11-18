@@ -23,7 +23,7 @@ function renderizarBannerCookies() {
             <span aria-hidden="true">🍪</span> Transparência de Cookies e Privacidade (LGPD)
           </strong>
           <p style="font-size: 0.875rem; color: #CBD5E1; max-width: 72ch;">
-            Utilizamos cookies essenciais para segurança de sessão e simulações financeiras. Nenhum cookie analítico ou de marketing é ativado sem seu consentimento livre e informado. Consulte nossos <a href="/termos.html" style="color: #FCA5A5; text-decoration: underline;">Termos de Uso, Política de Privacidade e Direitos do Titular</a>.
+            Utilizamos cookies essenciais para segurança de sessão e simulações financeiras. Nenhum cookie analítico ou de marketing é ativado sem seu consentimento livre e informado. Consulte nossos <a href="./termos.html" style="color: #FCA5A5; text-decoration: underline;">Termos de Uso, Política de Privacidade e Direitos do Titular</a>.
           </p>
         </div>
         <div style="display: flex; gap: 10px; flex-wrap: wrap;">
